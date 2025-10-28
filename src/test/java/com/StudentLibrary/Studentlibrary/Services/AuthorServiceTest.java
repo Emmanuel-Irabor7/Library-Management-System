@@ -91,7 +91,6 @@ class AuthorServiceTest {
     }
 
     @Test
-    @DisplayName("Should return Author when found by id")
     void getAuthorById_returnsAuthor() {
         Author author = new Author();
         author.setId(1);
@@ -107,7 +106,6 @@ class AuthorServiceTest {
     }
 
     @Test
-    @DisplayName("Should return null when Author not found by id")
     void getAuthorById_returnsNullWhenNotFound() {
         when(authorRepository.findById(99)).thenReturn(Optional.empty());
 
@@ -118,7 +116,6 @@ class AuthorServiceTest {
     }
 
     @Test
-    @DisplayName("Should return list of all authors from repository")
     void getAllAuthors_returnsAll() {
         List<Author> authors = List.of(
                 new Author("A", "a@example.com", 40, "UK"),
