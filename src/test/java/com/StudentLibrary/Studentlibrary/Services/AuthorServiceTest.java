@@ -25,7 +25,6 @@ class AuthorServiceTest {
     private AuthorService authorService;
 
     @Test
-    @DisplayName("Should call repository.save with provided Author when creating")
     void createAuthor_callsRepositorySave() {
         Author author = new Author();
         author.setName("John Doe");
@@ -40,7 +39,6 @@ class AuthorServiceTest {
 
 
     @Test
-    @DisplayName("Should propagate exceptions thrown by repository.save during create")
     void createAuthor_propagatesRepositoryException() {
         Author author = new Author();
         author.setName("Error");
@@ -52,7 +50,6 @@ class AuthorServiceTest {
     }
 
     @Test
-    @DisplayName("Should call repository.updateAuthorDetails with provided Author when updating")
     void updateAuthor_callsRepositoryUpdateDetails() {
         Author author = new Author();
         author.setId(5);
@@ -67,7 +64,6 @@ class AuthorServiceTest {
     }
 
     @Test
-    @DisplayName("Should propagate exceptions thrown by repository.updateAuthorDetails during update")
     void updateAuthor_propagatesRepositoryException() {
         Author author = new Author();
         author.setId(10);
@@ -80,7 +76,6 @@ class AuthorServiceTest {
     }
 
     @Test
-    @DisplayName("Should call repository.deleteCustom with provided id when deleting")
     void deleteAuthor_callsRepositoryDeleteCustom() {
         int id = 42;
         when(authorRepository.deleteCustom(eq(id))).thenReturn(1);

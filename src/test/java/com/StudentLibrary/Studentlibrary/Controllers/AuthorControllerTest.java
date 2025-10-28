@@ -29,7 +29,6 @@ class AuthorControllerTest {
     private final ObjectMapper objectMapper = new ObjectMapper();
 
     @Test
-    @DisplayName("Should create author and return 201 with confirmation message")
     void createAuthor_success() throws Exception {
         Author payload = new Author();
         payload.setName("Jane Austen");
@@ -49,7 +48,6 @@ class AuthorControllerTest {
     }
 
     @Test
-    @DisplayName("Should update author and return 202 with confirmation message")
     void updateAuthor_success() throws Exception {
         Author payload = new Author();
         payload.setId(1);
@@ -70,7 +68,6 @@ class AuthorControllerTest {
     }
 
     @Test
-    @DisplayName("Should delete author with given id and return 202 with confirmation message")
     void deleteAuthor_success() throws Exception {
         int id = 7;
         Mockito.doNothing().when(authorService).deleteAuthor(eq(id));
